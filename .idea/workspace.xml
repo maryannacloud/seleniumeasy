@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="354ddc7b-e071-4d79-9bad-7284887a14ca" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/starter/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/seleniumeasy/pageobjects/FormButton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/seleniumeasy/pageobjects/MultipleInputForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/seleniumeasy/pageobjects/SeleniumEasyForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/seleniumeasy/pageobjects/SingleInputForm.java" afterDir="false" />
+    <list default="true" id="354ddc7b-e071-4d79-9bad-7284887a14ca" name="Changes" comment="Defining Tests for UI Models">
+      <change afterPath="$PROJECT_DIR$/src/test/java/seleniumeasy/pageobjects/CheckboxForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/seleniumeasy/pageobjects/MultipleCheckboxForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workflows/maven.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/maven.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/seleniumeasy/tests/TestClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/seleniumeasy/tests/TestClass.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +58,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="seleniumeasy.pageobjects" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/.github" />
     </key>
@@ -79,6 +78,64 @@
       <option name="presentableId" value="Default" />
       <updated>1760762884101</updated>
     </task>
+    <task id="LOCAL-00001" summary="Updating dependencies">
+      <option name="closed" value="true" />
+      <created>1761097505220</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1761097505220</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Defining FormButton UI Model">
+      <option name="closed" value="true" />
+      <created>1761097543839</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1761097543839</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Defining SeleniumEasyForm UI Model">
+      <option name="closed" value="true" />
+      <created>1761097600291</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1761097600291</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Defining SingleInputForm UI Model">
+      <option name="closed" value="true" />
+      <created>1761097617903</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1761097617903</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Defining MultipleInputForm UI Model">
+      <option name="closed" value="true" />
+      <created>1761097627453</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1761097627453</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Defining Tests for UI Models">
+      <option name="closed" value="true" />
+      <created>1761097642262</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1761097642262</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Updating dependencies" />
+    <MESSAGE value="Defining FormButton UI Model" />
+    <MESSAGE value="Defining SeleniumEasyForm UI Model" />
+    <MESSAGE value="Defining SingleInputForm UI Model" />
+    <MESSAGE value="Defining MultipleInputForm UI Model" />
+    <MESSAGE value="Defining Tests for UI Models" />
+    <option name="LAST_COMMIT_MESSAGE" value="Defining Tests for UI Models" />
   </component>
 </project>
