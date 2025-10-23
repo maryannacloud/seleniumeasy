@@ -3,10 +3,7 @@ package seleniumeasy.tests;
 import net.thucydides.core.annotations.Managed;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
-import seleniumeasy.pageobjects.CheckboxForm;
-import seleniumeasy.pageobjects.MultipleInputForm;
-import seleniumeasy.pageobjects.RadioButtonsForm;
-import seleniumeasy.pageobjects.SingleInputForm;
+import seleniumeasy.pageobjects.*;
 
 import java.util.List;
 
@@ -68,5 +65,16 @@ public class TestClass {
         radioButtonsForm.selectOption("Male");
         radioButtonsForm.getCheckedValue();
         assertThat(radioButtonsForm.getResult()).isEqualTo("Radio button 'Male' is checked");
+    }
+
+    MultipleRadioButtonsFrom multipleRadioButtonsForm;
+
+    @Test
+    public void multipleRadioButtons() {
+        multipleRadioButtonsForm.open();
+        multipleRadioButtonsForm.selectGender("Female");
+        multipleRadioButtonsForm.selectAgeGroup("15 - 50");
+        multipleRadioButtonsForm.getValues();
+        assertThat(multipleRadioButtonsForm.getResult()).contains("Sex : Female").contains("Age group: 15 - 50");
     }
 }
