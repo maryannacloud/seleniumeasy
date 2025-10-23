@@ -5,7 +5,10 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import seleniumeasy.pageobjects.CheckboxForm;
 import seleniumeasy.pageobjects.MultipleInputForm;
+import seleniumeasy.pageobjects.RadioButtonsForm;
 import seleniumeasy.pageobjects.SingleInputForm;
+
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -44,23 +47,26 @@ public class TestClass {
 
     }
 
+    private static final List<String> ALL_THE_OPTIONS = List.of("Option 1", "Option 2", "Option 3", "Option 4");
+
     @Test
     public void multipleCheckbox() {
         checkboxForm.open();
-        assertThat(checkboxForm.optionIsCheckedFor("Option 1")).isFalse();
-        assertThat(checkboxForm.optionIsCheckedFor("Option 2")).isFalse();
-        assertThat(checkboxForm.optionIsCheckedFor("Option 3")).isFalse();
-        assertThat(checkboxForm.optionIsCheckedFor("Option 4")).isFalse();
+
+        assertThat(ALL_THE_OPTIONS).allMatch(option -> !checkboxForm.optionIsCheckedFor(option));
 
         checkboxForm.clickCheckAllButton();
 
-        assertThat(checkboxForm.optionIsCheckedFor("Option 1")).isTrue();
-        assertThat(checkboxForm.optionIsCheckedFor("Option 2")).isTrue();
-        assertThat(checkboxForm.optionIsCheckedFor("Option 3")).isTrue();
-        assertThat(checkboxForm.optionIsCheckedFor("Option 4")).isTrue();
-
+        assertThat(ALL_THE_OPTIONS).allMatch(option -> checkboxForm.optionIsCheckedFor(option));
     }
 
+    RadioButtonsForm radioButtonsForm;
 
-
+    @Test
+    public void radioButtons() {
+        radioButtonsForm.open();
+        radioButtonsForm.selectOption("Male");
+        radioButtonsForm.getCheckedValue();
+        assertThat(radioButtonsForm.getResult()).isEqualTo("Radio button 'Male' is checked");
+    }
 }

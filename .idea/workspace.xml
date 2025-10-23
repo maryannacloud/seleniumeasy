@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="354ddc7b-e071-4d79-9bad-7284887a14ca" name="Changes" comment="Defining Tests for UI Models">
-      <change afterPath="$PROJECT_DIR$/src/test/java/seleniumeasy/pageobjects/CheckboxForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/seleniumeasy/pageobjects/MultipleCheckboxForm.java" afterDir="false" />
+    <list default="true" id="354ddc7b-e071-4d79-9bad-7284887a14ca" name="Changes" comment=".gitignore to not include workspace.xml file">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/seleniumeasy/pageobjects/RadioButtonsForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/seleniumeasy/tests/TestClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/seleniumeasy/tests/TestClass.java" afterDir="false" />
     </list>
@@ -126,7 +126,31 @@
       <option name="project" value="LOCAL" />
       <updated>1761097642262</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Creating Checkbox From Page Object">
+      <option name="closed" value="true" />
+      <created>1761099311287</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1761099311287</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Adding tests">
+      <option name="closed" value="true" />
+      <created>1761099344173</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1761099344173</updated>
+    </task>
+    <task id="LOCAL-00009" summary=".gitignore to not include workspace.xml file">
+      <option name="closed" value="true" />
+      <created>1761099369527</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1761099369527</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -136,6 +160,9 @@
     <MESSAGE value="Defining SingleInputForm UI Model" />
     <MESSAGE value="Defining MultipleInputForm UI Model" />
     <MESSAGE value="Defining Tests for UI Models" />
-    <option name="LAST_COMMIT_MESSAGE" value="Defining Tests for UI Models" />
+    <MESSAGE value="Creating Checkbox From Page Object" />
+    <MESSAGE value="Adding tests" />
+    <MESSAGE value=".gitignore to not include workspace.xml file" />
+    <option name="LAST_COMMIT_MESSAGE" value=".gitignore to not include workspace.xml file" />
   </component>
 </project>
