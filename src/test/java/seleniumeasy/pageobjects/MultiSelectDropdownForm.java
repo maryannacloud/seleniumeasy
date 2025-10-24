@@ -14,7 +14,7 @@ public class MultiSelectDropdownForm extends SeleniumEasyForm {
         return $(STATE).getSelectedValues();
     }
 
-    public void selectStates(String ... states) {
+    public void selectStates(String... states) {
         for (String state : states) {
             $(STATE).select().byValue(state);
         }
