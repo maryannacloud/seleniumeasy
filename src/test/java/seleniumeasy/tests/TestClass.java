@@ -28,6 +28,7 @@ public class TestClass {
     @Test
     public void basicFormsWithUniqueFields() {
         multipleInputFieldsForm.open();
+
         multipleInputFieldsForm.enterValue1("2");
         multipleInputFieldsForm.enterValue2("3");
         multipleInputFieldsForm.getTotal();
@@ -39,6 +40,7 @@ public class TestClass {
     @Test
     public void singleCheckbox() {
         checkboxForm.open();
+
         checkboxForm.setAgeSelected();
         assertThat(checkboxForm.ageText()).isEqualTo("Success - Check box is checked");
     }
@@ -48,6 +50,7 @@ public class TestClass {
     @Test
     public void multipleCheckbox() {
         checkboxForm.open();
+
         assertThat(ALL_THE_OPTIONS).allMatch(option -> !checkboxForm.optionIsCheckedFor(option));
         checkboxForm.clickCheckAllButton();
         assertThat(ALL_THE_OPTIONS).allMatch(option -> checkboxForm.optionIsCheckedFor(option));
@@ -58,6 +61,7 @@ public class TestClass {
     @Test
     public void radioButtons() {
         radioButtonsForm.open();
+
         radioButtonsForm.selectOption("Male");
         radioButtonsForm.getCheckedValue();
         assertThat(radioButtonsForm.getResult()).isEqualTo("Radio button 'Male' is checked");
@@ -68,9 +72,11 @@ public class TestClass {
     @Test
     public void multipleRadioButtons() {
         multipleRadioButtonsForm.open();
+
         multipleRadioButtonsForm.selectGender("Female");
         multipleRadioButtonsForm.selectAgeGroup("15 - 50");
         multipleRadioButtonsForm.getValues();
+
         assertThat(multipleRadioButtonsForm.getResult()).contains("Sex : Female").contains("Age group: 15 - 50");
     }
 
@@ -79,6 +85,7 @@ public class TestClass {
     @Test
     public void singleSelectDropdown() {
         singleSelectDropdownForm.open();
+
         assertThat(singleSelectDropdownForm.selectedDay()).isEmpty();
         singleSelectDropdownForm.selectDay("Wednesday");
         assertThat(singleSelectDropdownForm.selectedDay()).isEqualTo("Wednesday");
@@ -89,9 +96,24 @@ public class TestClass {
     @Test
     public void multiSelectDropdown() {
         multiSelectDropdownForm.open();
+
         assertThat(multiSelectDropdownForm.selectedStates()).isEmpty();
         multiSelectDropdownForm.selectStates("FL", "VA", "NY");
         assertThat(multiSelectDropdownForm.selectedStates()).containsExactlyInAnyOrder("Florida", "Virginia", "New York");
+    }
 
+    HoverPage hoverPage;
+
+    @Test
+    public void hover() {
+        hoverPage.open();
+
+        hoverPage.hoverOverFigure(1);
+        hoverPage.captionForFigure(1).shouldBeVisible();
+        hoverPage.captionForFigure(1).shouldContainText("user2");
+
+        hoverPage.hoverOverFigure(2);
+        hoverPage.captionForFigure(2).shouldBeVisible();
+        hoverPage.captionForFigure(2).shouldContainText("user2");
     }
 }
