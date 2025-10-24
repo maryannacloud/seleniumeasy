@@ -41,7 +41,6 @@ public class TestClass {
         checkboxForm.open();
         checkboxForm.setAgeSelected();
         assertThat(checkboxForm.ageText()).isEqualTo("Success - Check box is checked");
-
     }
 
     private static final List<String> ALL_THE_OPTIONS = List.of("Option 1", "Option 2", "Option 3", "Option 4");
@@ -49,11 +48,8 @@ public class TestClass {
     @Test
     public void multipleCheckbox() {
         checkboxForm.open();
-
         assertThat(ALL_THE_OPTIONS).allMatch(option -> !checkboxForm.optionIsCheckedFor(option));
-
         checkboxForm.clickCheckAllButton();
-
         assertThat(ALL_THE_OPTIONS).allMatch(option -> checkboxForm.optionIsCheckedFor(option));
     }
 
@@ -76,5 +72,26 @@ public class TestClass {
         multipleRadioButtonsForm.selectAgeGroup("15 - 50");
         multipleRadioButtonsForm.getValues();
         assertThat(multipleRadioButtonsForm.getResult()).contains("Sex : Female").contains("Age group: 15 - 50");
+    }
+
+    SingleSelectDropdownFrom singleSelectDropdownForm;
+
+    @Test
+    public void singleSelectDropdown() {
+        singleSelectDropdownForm.open();
+        assertThat(singleSelectDropdownForm.selectedDay()).isEmpty();
+        singleSelectDropdownForm.selectDay("Wednesday");
+        assertThat(singleSelectDropdownForm.selectedDay()).isEqualTo("Wednesday");
+    }
+
+    MultiSelectDropdownForm multiSelectDropdownForm;
+
+    @Test
+    public void multiSelectDropdown() {
+        multiSelectDropdownForm.open();
+        assertThat(multiSelectDropdownForm.selectedStates()).isEmpty();
+        multiSelectDropdownForm.selectStates("FL", "VA", "NY");
+        assertThat(multiSelectDropdownForm.selectedStates()).containsExactlyInAnyOrder("Florida", "Virginia", "New York");
+
     }
 }
