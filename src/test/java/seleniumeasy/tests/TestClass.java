@@ -1,8 +1,10 @@
 package seleniumeasy.tests;
 
 import net.thucydides.core.annotations.Managed;
+import net.thucydides.core.annotations.Steps;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
+import seleniumeasy.actions.NavigateActions;
 import seleniumeasy.pageobjects.*;
 
 import java.util.List;
@@ -14,11 +16,14 @@ public class TestClass {
     @Managed(driver = "chrome", uniqueSession = true)
     WebDriver driver;
 
+    @Steps
+    NavigateActions navigate;
+
     SingleInputForm singleInputForm;
 
     @Test
     public void basicForms() {
-        singleInputForm.open();
+        navigate.to(FormPageConstants.SingleInputFieldForm);
         singleInputForm.enterMessage("Hello Serenity!");
         assertThat(singleInputForm.displayedMessage()).isEqualTo("Hello Serenity!");
     }
@@ -27,7 +32,7 @@ public class TestClass {
 
     @Test
     public void basicFormsWithUniqueFields() {
-        multipleInputFieldsForm.open();
+        navigate.to(FormPageConstants.MultipleInputForm);
         multipleInputFieldsForm.enterValue1("2");
         multipleInputFieldsForm.enterValue2("3");
         multipleInputFieldsForm.getTotal();
@@ -38,7 +43,7 @@ public class TestClass {
 
     @Test
     public void singleCheckbox() {
-        checkboxForm.open();
+        navigate.to(FormPageConstants.CheckboxForm);
         checkboxForm.setAgeSelected();
         assertThat(checkboxForm.ageText()).isEqualTo("Success - Check box is checked");
     }
@@ -68,9 +73,11 @@ public class TestClass {
     @Test
     public void multipleRadioButtons() {
         multipleRadioButtonsForm.open();
+
         multipleRadioButtonsForm.selectGender("Female");
         multipleRadioButtonsForm.selectAgeGroup("15 - 50");
         multipleRadioButtonsForm.getValues();
+
         assertThat(multipleRadioButtonsForm.getResult()).contains("Sex : Female").contains("Age group: 15 - 50");
     }
 
@@ -79,6 +86,7 @@ public class TestClass {
     @Test
     public void singleSelectDropdown() {
         singleSelectDropdownForm.open();
+
         assertThat(singleSelectDropdownForm.selectedDay()).isEmpty();
         singleSelectDropdownForm.selectDay("Wednesday");
         assertThat(singleSelectDropdownForm.selectedDay()).isEqualTo("Wednesday");
@@ -89,9 +97,24 @@ public class TestClass {
     @Test
     public void multiSelectDropdown() {
         multiSelectDropdownForm.open();
+
         assertThat(multiSelectDropdownForm.selectedStates()).isEmpty();
         multiSelectDropdownForm.selectStates("FL", "VA", "NY");
         assertThat(multiSelectDropdownForm.selectedStates()).containsExactlyInAnyOrder("Florida", "Virginia", "New York");
+    }
 
+    HoverPage hoverPage;
+
+    @Test
+    public void hover() {
+        hoverPage.open();
+
+        hoverPage.hoverOverFigure(1);
+        hoverPage.captionForFigure(1).shouldBeVisible();
+        hoverPage.captionForFigure(1).shouldContainText("user2");
+
+        hoverPage.hoverOverFigure(2);
+        hoverPage.captionForFigure(2).shouldBeVisible();
+        hoverPage.captionForFigure(2).shouldContainText("user2");
     }
 }
