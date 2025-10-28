@@ -1,8 +1,10 @@
 package seleniumeasy.tests;
 
 import net.thucydides.core.annotations.Managed;
+import net.thucydides.core.annotations.Steps;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
+import seleniumeasy.actions.NavigateActions;
 import seleniumeasy.pageobjects.*;
 
 import java.util.List;
@@ -14,11 +16,14 @@ public class TestClass {
     @Managed(driver = "chrome", uniqueSession = true)
     WebDriver driver;
 
+    @Steps
+    NavigateActions navigate;
+
     SingleInputForm singleInputForm;
 
     @Test
     public void basicForms() {
-        singleInputForm.open();
+        navigate.to(FormPageConstants.SingleInputFieldForm);
         singleInputForm.enterMessage("Hello Serenity!");
         assertThat(singleInputForm.displayedMessage()).isEqualTo("Hello Serenity!");
     }
@@ -27,8 +32,7 @@ public class TestClass {
 
     @Test
     public void basicFormsWithUniqueFields() {
-        multipleInputFieldsForm.open();
-
+        navigate.to(FormPageConstants.MultipleInputForm);
         multipleInputFieldsForm.enterValue1("2");
         multipleInputFieldsForm.enterValue2("3");
         multipleInputFieldsForm.getTotal();
@@ -39,8 +43,7 @@ public class TestClass {
 
     @Test
     public void singleCheckbox() {
-        checkboxForm.open();
-
+        navigate.to(FormPageConstants.CheckboxForm);
         checkboxForm.setAgeSelected();
         assertThat(checkboxForm.ageText()).isEqualTo("Success - Check box is checked");
     }
@@ -50,7 +53,6 @@ public class TestClass {
     @Test
     public void multipleCheckbox() {
         checkboxForm.open();
-
         assertThat(ALL_THE_OPTIONS).allMatch(option -> !checkboxForm.optionIsCheckedFor(option));
         checkboxForm.clickCheckAllButton();
         assertThat(ALL_THE_OPTIONS).allMatch(option -> checkboxForm.optionIsCheckedFor(option));
@@ -61,7 +63,6 @@ public class TestClass {
     @Test
     public void radioButtons() {
         radioButtonsForm.open();
-
         radioButtonsForm.selectOption("Male");
         radioButtonsForm.getCheckedValue();
         assertThat(radioButtonsForm.getResult()).isEqualTo("Radio button 'Male' is checked");
