@@ -11,7 +11,7 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class TestClass {
+public class WhenInteractingWithWebElements {
 
     @Managed(driver = "chrome", uniqueSession = true)
     WebDriver driver;
