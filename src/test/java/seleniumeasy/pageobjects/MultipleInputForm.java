@@ -1,6 +1,7 @@
 package seleniumeasy.pageobjects;
 
-import net.thucydides.core.annotations.DefaultUrl;
+
+import net.serenitybdd.annotations.DefaultUrl;
 
 @DefaultUrl("https://www.seleniumeasy.com/test/basic-first-form-demo.html")
 public class MultipleInputForm extends SeleniumEasyForm{
