@@ -1,8 +1,11 @@
 package seleniumeasy.tests;
 
-import net.thucydides.core.annotations.Managed;
-import net.thucydides.core.annotations.Steps;
+import net.serenitybdd.annotations.Managed;
+import net.serenitybdd.annotations.Steps;
+import net.serenitybdd.junit5.SerenityJUnit5Extension;
+
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.WebDriver;
 import seleniumeasy.actions.NavigateActions;
 import seleniumeasy.pageobjects.*;
@@ -11,6 +14,7 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@ExtendWith(SerenityJUnit5Extension.class)
 public class WhenInteractingWithWebElements {
 
     @Managed(driver = "chrome", uniqueSession = true)

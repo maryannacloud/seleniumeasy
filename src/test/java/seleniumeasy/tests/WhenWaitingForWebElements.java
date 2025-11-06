@@ -1,7 +1,10 @@
 package seleniumeasy.tests;
 
-import net.thucydides.core.annotations.Managed;
+import net.serenitybdd.annotations.Managed;
+import net.serenitybdd.junit5.SerenityJUnit5Extension;
+
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.WebDriver;
 import seleniumeasy.pageobjects.AlertMessagePage;
 import seleniumeasy.pageobjects.DynamicDataPage;
@@ -9,6 +12,7 @@ import seleniumeasy.pageobjects.ModalDialogPage;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@ExtendWith(SerenityJUnit5Extension.class)
 public class WhenWaitingForWebElements {
 
     @Managed(driver = "chrome")
